@@ -1,18 +1,55 @@
 # gdbooks
 
 To run the server locally
-- create virtual environment`python3 -m venv gdenv`
-- launch it `source gdenv/bin/activate`
+- create virtual environment (e.g. `python3 -m venv gdenv`)
+- launch it (e.g. `source gdenv/bin/activate`)
 - install requirements from basefolder `pip install requirements.txt`
 - run database migration `python manage.py migrate`
 - run django local server `python manage.py runserver`
 
+# curl -X POST --data "email=eikheloa@gmail.com&title=Blink" http://localhost:8000/request
+# curl -X DELETE http://localhost:8000/request/17
+# curl -X GET http://localhost:8000/request/
 
-I was able to impement the list all requests and specific requests endpoints as well as delete a request endpoint but tripped up on the create request endpoint. I wasn't able to pull in data from the request context in order to validate email and book titles. That's what I would've done next.
+## Endpoints:
 
-I'm disappointed I didn't complete the assignment but grateful for this opportunity.
+### Create request:
 
-Library Books
+`POST /request`
+
+Example request body:
+```JSON
+{
+    "email": "jake@jake.jake",
+    "title": "War and Peace",
+}
+```
+
+No authentication required
+
+Required fields: `email`, `title`
+
+
+### Get request list:
+
+`GET /request/`
+
+No authentication required
+
+### Get specific request:
+
+`GET /request/:id`
+
+No authentication required
+
+### Get specific request:
+
+`DELETE /request/:id`
+
+No authentication required
+
+
+##Library Books
 - Blink
 - Delivering Happiness
 - The War on Normal People
