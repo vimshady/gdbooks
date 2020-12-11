@@ -11,3 +11,16 @@ To run the server locally
 I was able to impement the list all requests and specific requests endpoints as well as delete a request endpoint but tripped up on the create request endpoint. I wasn't able to pull in data from the request context in order to validate email and book titles. That's what I would've done next.
 
 I'm disappointed I didn't complete the assignment but grateful for this opportunity.
+
+Library Books
+- Blink
+- Delivering Happiness
+- The War on Normal People
+- Radical Markets
+- Progress and Poverty
+- Development as Freedom
+- Banker to the Poor by
+- Crime and Punishment
+- The Sound and Fury
+- War and Peace
+- Pride and Prejudice

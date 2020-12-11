@@ -1,29 +1,30 @@
 from django.db import models
 
+
 class Book(models.Model):
     """
     Book
     """
-    title = models.CharField(max_length=200)
-    available = models.BooleanField(default=False)
-    
+    title = models.CharField(max_length=200)    
+    def __str__(self):
+        """Return string."""
+        return self.title
 
-    class Meta:
-
-        def __str__(self):
-            """Return string."""
-            return self.title
+    def is_available(self):
+        try:
+            self.request
+            return False
+        except:
+            return True
 
 class Request(models.Model):
     """
     Request
     """
-    email = models.CharField(max_length=200)
+    email = models.EmailField(max_length=200)
     timestamp = models.DateTimeField(auto_now=True)
-    book = models.ForeignKey('Book', on_delete=models.CASCADE)
+    book = models.OneToOneField('Book', on_delete=models.CASCADE, related_name='request')
 
-    class Meta:
-
-        def __str__(self):
-            """Return string."""
-            return self.email
+    def __str__(self):
+        """Return string."""
+        return self.email, self.book.title
