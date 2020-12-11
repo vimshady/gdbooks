@@ -25,14 +25,16 @@ def request_view(request, pk=None):
 				'id': book.id,
 				'available': book.is_available(),
 				'title': book.title,
-				'timestamp': book.request.timestamp
+				'timestamp': book.request.timestamp,
+				'request_id': book.request.id
 				}})
 		else:
 			return Response({"message": "Could not request. See existing request", "data": {
 				'id': book.id,
 				'available': book.is_available(),
 				'title': book.title,
-				'timestamp': book.request.timestamp
+				'timestamp': book.request.timestamp,
+				'request_id': book.request.id
 				}})
 	if request.method == 'DELETE':
 		try:
@@ -62,7 +64,8 @@ def request_view(request, pk=None):
 					'id': r.book.id,
 					'available': r.book.is_available(),
 					'title': r.book.title,
-					'timestamp': r.timestamp
+					'timestamp': r.timestamp,
+					'request_id': r.id
 					})
 
 	return Response({"message": "GET", "data":data})

@@ -7,10 +7,6 @@ To run the server locally
 - run database migration `python manage.py migrate`
 - run django local server `python manage.py runserver`
 
-# curl -X POST --data "email=eikheloa@gmail.com&title=Blink" http://localhost:8000/request
-# curl -X DELETE http://localhost:8000/request/17
-# curl -X GET http://localhost:8000/request/
-
 ## Endpoints:
 
 ### Create request:
@@ -42,14 +38,14 @@ No authentication required
 
 No authentication required
 
-### Get specific request:
+### Delete request:
 
 `DELETE /request/:id`
 
 No authentication required
 
 
-##Library Books
+## Available Library Books
 - Blink
 - Delivering Happiness
 - The War on Normal People
